@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="snow-container">
+        <div class="rectangle-container">
+            <div class="button-container">
+                <button id="refresh"><i class="fas fa-sync-alt"></i></button>
+                <button id="openModal" onclick="showModal()"><i class="fas fa-plus-square"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+
+            <div class="select-container">
+                <div class="size-choice">
+                    <h3>Select size</h3>
+                    <hr>
+                    <div class="size-btn" id="size-container">
+                        <button class="btn size" id="small" value="small">small</button>
+                        <button class="btn size" id="medium" value="medium">medium</button>
+                        <button class="btn size" id="large" value="large">large</button>
+                    </div>
+                </div>
+                <div class="color-choice">
+                    <h3>Select color</h3>
+                    <hr>
+                    <div class="color-btn" id="color-container">
+                        <div class="first-row">
+                            <button class="btn color torqouise" type="submit" id="torqouise" value="torqouise"></button>
+                            <button class="btn color amethyst" id="amethyst" value="amethyst"></button>
+                            <button class="btn color alizarin" id="alizarin" value="alizarin"></button>
+                        </div>
+                        <div class="second-row">
+                            <button class="btn color sky" id="sky" value="sky"></button>
+                            <button class="btn color orange" id="orange" value="orange"></button>
+                            <button class="btn color cove" id="cove" value="cove"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="position-choice">
+                    <h3>Select position</h3>
+                    <hr>
+                    <button class="btn position" value="start">start</button>
+                    <button class="btn position" value="end">end</button>
+                </div>
+                <div class="addRectangle">
+                    <button class="add" onclick="populateRectangles()">Add <i class="far fa-plus-square"></i></button>
+                </div>
+                <div class="close">
+                    <button onclick="closeModal()"><i class="fas fa-window-close"></i></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
