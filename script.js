@@ -36,20 +36,18 @@ function populateRectangles() {
   
   if (color && size) {
     rectangles.push(addNewRectangle(size,color))
-  } else {alert('dżuma')}
+  } 
   
 }
 
 
 
-function render() {
+function renderRectangles() {
  arrayContent =  document.getElementById('content')
  arrayContent.innerHTML = ''
 
- rectangles.forEach(function(size, color){
-  var content = '<div class="rectangle"></div>'
-  arrayContent.insertAdjacentHTML('beforeend', content).classList.add(color, size)
- })
-
-
+ rectangles.forEach(function(rectangle){
+  var content = `<div class="rectangle ${rectangle.size} ${rectangle.color}"></div>`
+  var elem  = arrayContent.insertAdjacentHTML('beforeend', content)
+})
 }
