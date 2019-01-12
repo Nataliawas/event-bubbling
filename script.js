@@ -9,45 +9,62 @@ function closeModal() {
 }
 
 var sizeChoice = document.getElementById("size-container")
-sizeChoice.addEventListener('click', function(e) {
+sizeChoice.addEventListener('click', function (e) {
   if (e.target) {
     return size = e.target.value
   }
-},false)
+}, false)
 
 var colorChoice = document.getElementById("color-container")
-colorChoice.addEventListener('click', function(e) {
+colorChoice.addEventListener('click', function (e) {
   if (e.target) {
-    
-    return color = e.target.value 
+
+    return color = e.target.value
+  }
+}, false)
+
+var positionChoice = document.getElementById("position-container")
+positionChoice.addEventListener('click', function (e) {
+  if (e.target) {
+
+    return position = e.target.value
   }
 }, false)
 
 function addNewRectangle() {
   return {
     size: size,
-    color: color
+    color: color,
+    position: position
   }
 }
+
 
 var rectangles = []
 
 function populateRectangles() {
-  
-  if (color && size) {
-    rectangles.push(addNewRectangle(size,color))
-  } 
-  
+
+  if (color && size && position) {
+    rectangles.push(addNewRectangle(size, color, position))
+  }
+
 }
 
-
-
 function renderRectangles() {
- arrayContent =  document.getElementById('content')
- arrayContent.innerHTML = ''
+  arrayContent = document.getElementById('content')
+  arrayContent.innerHTML = ''
 
- rectangles.forEach(function(rectangle){
-  var content = `<div class="rectangle ${rectangle.size} ${rectangle.color}"></div>`
-  var elem  = arrayContent.insertAdjacentHTML('beforeend', content)
-})
+  rectangles.forEach(function (rectangle) {
+    var content = `<div class="rectangle ${rectangle.size} ${rectangle.color} ${rectangle.size}"><button onclick="removeRectangle()"><i class="far fa-trash-alt"></i></button></div>`
+    if (rectangle.size = 'start') {
+      var elem = arrayContent.insertAdjacentHTML('afterbegin', content)
+    } else {
+      var elem = arrayContent.insertAdjacentHTML('beforeend', content)
+    }
+  })
+}
+
+function removeRectangle(index) {
+  rectangles.splice(index, 1)
+  renderRectangles()
 }

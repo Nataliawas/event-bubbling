@@ -15,8 +15,8 @@
     <div class="snow-container">
         <div class="rectangle-container">
             <div class="button-container">
-                <button id="refresh" onclick ="renderRectangles()"><i class="fas fa-sync-alt"></i></button>
-                <button id="openModal" onclick="showModal()"><i class="fas fa-plus-square"></i></button>
+                <button class="btn-main button" id="refresh" onclick="renderRectangles()"><i class="fas fa-sync-alt"></i></button>
+                <button class="btn-main button" id="openModal" onclick="showModal()"><i class="fas fa-plus-square"></i></button>
             </div>
             <div id="content">
 
@@ -27,7 +27,7 @@
     <div class="modal" id="modal">
         <div class="modal-content">
 
-            <div class="select-container">
+            <div class="select-container" id="main-container">
                 <div class="size-choice">
                     <h3>Select size</h3>
                     <hr>
@@ -56,8 +56,10 @@
                 <div class="position-choice">
                     <h3>Select position</h3>
                     <hr>
-                    <button class="btn position" value="start">start</button>
-                    <button class="btn position" value="end">end</button>
+                    <div id="position-container">
+                        <button class="btn position" value="start">start</button>
+                        <button class="btn position" value="end">end</button>
+                    </div>
                 </div>
                 <div class="addRectangle">
                     <button class="add" onclick="populateRectangles()">Add <i class="far fa-plus-square"></i></button>
