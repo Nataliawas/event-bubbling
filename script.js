@@ -8,6 +8,13 @@ function closeModal() {
   return modal.style.display = "none"
 }
 
+window.onclick = function (event) {
+  var modal = document.getElementById("modal")
+  if (event.target == modal) {
+    modal.style.display = "none"
+  }
+}
+
 var sizeChoice = document.getElementById("size-container")
 sizeChoice.addEventListener('click', function (e) {
   if (e.target) {
@@ -55,7 +62,7 @@ function renderRectangles() {
   arrayContent.innerHTML = ''
 
   rectangles.forEach(function (rectangle) {
-    var content = `<div class="rectangle ${rectangle.size} ${rectangle.color} ${rectangle.size}"><button onclick="removeRectangle()"><i class="far fa-trash-alt"></i></button></div>`
+    var content = `<div class="rectangle ${rectangle.size} ${rectangle.color} ${rectangle.size}"><button class="remove-btn" onclick="removeRectangle()"><i class="far fa-trash-alt"></i></button></div>`
     if (rectangle.size = 'start') {
       var elem = arrayContent.insertAdjacentHTML('afterbegin', content)
     } else {
